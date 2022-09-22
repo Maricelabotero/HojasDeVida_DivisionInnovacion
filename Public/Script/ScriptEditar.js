@@ -51,7 +51,7 @@ function MandaridFormacion(elem) {
 
 
     function EliminarFormacionid() {
-        fetch('http://localhost:4000/HojaDeVida/EliminarFormacion', {
+        fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/EliminarFormacion', {
             method: 'DELETE', body: JSON.stringify(Elid),
             headers: {
                 'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ function MandaridExperiencia(elem) {
     const Elid = { _id: elem.id }
 
     function EliminarExperienciaid() {
-        fetch('http://localhost:4000/HojaDeVida/EliminarExperiencia', {
+        fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/EliminarExperiencia', {
             method: 'DELETE', body: JSON.stringify(Elid),
             headers: {
                 'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ function MandaridExperiencia(elem) {
 document.addEventListener('DOMContentLoaded', async (req, res) => {
     async function Consulta() {
         const idPerson = { _id: myVariableActualizar._id }
-        const url = 'http://localhost:4000/HojaDeVida/ConsultarId'
+        const url = 'https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultarId'
         const datos = await fetch(url, {
             method: 'POST', body: JSON.stringify(idPerson),
             headers: {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
             ).innerHTML += `<select class="form-select" id="id_Tipo_personal" name="Tipo_personal">
             <option value=${datos[i].Tipo_personal}>${datos[i].Tipo_personal}</option></select>`
             const Tipo = { Nombre: datos[i].Tipo_personal }
-            const data = await fetch('http://localhost:4000/TipoPersonal/ConsultarEditar', {
+            const data = await fetch('https://hojas-de-vida.herokuapp.com/TipoPersonal/ConsultarEditar', {
                 method: 'POST', body: JSON.stringify(Tipo),
                 headers: {
                     'Content-Type': 'application/json'
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
         async function Formaciones() {
 
             var cedu = { Cedula: cedula };
-            const Formaciones = await fetch('http://localhost:4000/HojaDeVida/ConsultarFormaciones', {
+            const Formaciones = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultarFormaciones', {
                 method: 'POST', body: JSON.stringify(cedu),
                 headers: {
                     'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 
         async function Experiencias() {
             var cedu = { Cedula: cedula };
-            const Experiencias = await fetch('http://localhost:4000/HojaDeVida/ConsultarExperiencias', {
+            const Experiencias = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultarExperiencias', {
                 method: 'POST', body: JSON.stringify(cedu),
                 headers: {
                     'Content-Type': 'application/json'
