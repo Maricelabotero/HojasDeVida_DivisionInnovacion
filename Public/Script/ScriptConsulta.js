@@ -1,6 +1,6 @@
 //Petición para llenar lista tipo personal 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data = await fetch('http://localhost:4000/TipoPersonal/Consultar')
+  const data = await fetch('https://hojas-de-vida.herokuapp.com/TipoPersonal/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data) {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista Nivel formación 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('http://localhost:4000/NivelFormacion/Consultar')
+  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/NivelFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
@@ -32,7 +32,7 @@ select.addEventListener('change',
     if (Unidad == "Agrarias, veterinaria y afines") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarAgrarias')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarAgrarias')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -47,7 +47,7 @@ select.addEventListener('change',
     else if (Unidad == "Bellas artes") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarBellasArtes')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarBellasArtes')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -62,7 +62,7 @@ select.addEventListener('change',
     else if (Unidad == "Ciencias de la educación") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarCienciasEducacion')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarCienciasEducacion')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -77,7 +77,7 @@ select.addEventListener('change',
     else if (Unidad == "Ciencias de la salud") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarCienciasSalud')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarCienciasSalud')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -92,7 +92,7 @@ select.addEventListener('change',
     else if (Unidad == "Económica, administración, contaduría y afines") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarEconomica')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarEconomica')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -107,7 +107,7 @@ select.addEventListener('change',
     else if (Unidad == "Ciencias sociales y humanas") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarCienciasSociales')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarCienciasSociales')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -122,7 +122,7 @@ select.addEventListener('change',
     else if (Unidad == "Ingeniería, arquitectura, urbanismo y afines") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarIngenieria')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarIngenieria')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -137,7 +137,7 @@ select.addEventListener('change',
     else if (Unidad == "Ciencias exactas") {
       document.getElementById("id_Area_formacion").innerHTML = "";
       const ConsultarAreaFormacion = async () => {
-        const dataA = await fetch('http://localhost:4000/AreaFormacion/ConsultarCienciasExactas')
+        const dataA = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarCienciasExactas')
           .then(res => res.json())
           .catch(err => err)
         for (var i in dataA) {
@@ -154,7 +154,7 @@ select.addEventListener('change',
 
 //Petición para llenar lista Unidad formación 
 document.addEventListener('DOMContentLoaded', async () => {
-  const dataU = await fetch('http://localhost:4000/UnidadFormacion/Consultar')
+  const dataU = await fetch('https://hojas-de-vida.herokuapp.com/UnidadFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in dataU) {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista area experiencia
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('http://localhost:4000/AreaExperiencia/Consultar')
+  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/AreaExperiencia/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
