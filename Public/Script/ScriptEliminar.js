@@ -46,7 +46,7 @@ function MandaridPersona(element) {
   const Elid = { _id: element.id }
 
   function EliminarPersonaid() {
-    fetch('http://localhost:4000/HojaDeVida/EliminarHojaDeVida', {
+    fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/EliminarHojaDeVida', {
       method: 'DELETE', body: JSON.stringify(Elid),
       headers: {
         'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ function MandaridPersona(element) {
 //Eliminar las formaciones con la cédula eliminada
 function EliminarFormacionCedula(cedula) {
   Cedu = { Cedula: cedula }
-  fetch('http://localhost:4000/HojaDeVida/EliminarFormacionCedula', {
+  fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/EliminarFormacionCedula', {
     method: 'DELETE', body: JSON.stringify(Cedu),
     headers: {
       'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ function EliminarFormacionCedula(cedula) {
 //Eliminar las experiencias con la cédula eliminada
 function EliminarExperienciaCedula(cedula) {
   Cedu = { Cedula: cedula }
-  fetch('http://localhost:4000/HojaDeVida/EliminarExperienciaCedula', {
+  fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/EliminarExperienciaCedula', {
     method: 'DELETE', body: JSON.stringify(Cedu),
     headers: {
       'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ function EliminarExperienciaCedula(cedula) {
 //Mostrar tarjetas con las personas registradas en la base de datos
 document.addEventListener('DOMContentLoaded', async (req, res) => {
   async function Mostrar() {
-    const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
       mode: 'no-cors',
     })
       .then(res => res.json())
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 async function BuscarCedula() {
   const cedula = document.getElementById("Cedula").value;
   Cedu = { Cedula: cedula }
-  const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaBusquedaCedula', {
+  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaBusquedaCedula', {
     method: 'POST', body: JSON.stringify(Cedu),
     headers: {
       'Content-Type': 'application/json'
