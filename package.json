@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend hojas de vida",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hoja",
+    "de",
+    "vida",
+    "hojas",
+    "de",
+    "vida"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap-icons": "^1.8.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2",
+    "sweetalert2": "^11.4.17",
+    "utf8": "^3.0.0"
+  }
+}

@@ -1,0 +1,135 @@
+.logo-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logo-center img {
+    height: 110px;
+
+}
+
+#padding {
+    padding-bottom: 20px;
+}
+
+.color-section {
+    color: green;
+}
+
+.padding {
+    padding-bottom: 20px;
+}
+
+.padding-top {
+    padding-top: 30 px;
+}
+
+.propiedades {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.design {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.gap {
+    display: flex;
+    gap: 6px;
+}
+
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+@media screen and (max-width: 480px) {
+    .contenido {
+        grid-template-columns: 1fr;
+        color: red;
+    }
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+
+.contenedorEnlace {
+    padding: 20px;
+    width: 83%;
+    margin: 0 auto;
+}
+
+.radioLink {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+}
+
+.insertar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.margin-table {
+    margin-top: 25px;
+}
+
+
+#right {
+    margin-right: 20px;
+}
+
+#Nombretarjeta{
+    background-color: #FFA500 ;
+}
+
+.modalContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContainer .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgba(56, 240, 80, 0.836);
+    border-top: 10px solid #019267;
+    width: 60%;
+}
+
+.modalContainer .close {
+    color: #019267;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.modalContainer .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

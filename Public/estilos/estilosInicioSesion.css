@@ -1,0 +1,153 @@
+.logo-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logo-center img {
+    height: 110px;
+}
+
+#padding {
+    padding-bottom: 20px;
+}
+
+.color-section {
+    color: green;
+}
+
+.padding {
+    padding-bottom: 20px;
+}
+
+.padding-top {
+    padding-top: 30 px;
+}
+
+.propiedades {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.design {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.gap {
+    display: flex;
+    gap: 6px;
+}
+
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+@media screen and (max-width: 480px) {
+    .contenido {
+        grid-template-columns: 1fr;
+        color: red;
+    }
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+
+.contenedorEnlace {
+    padding: 20px;
+    width: 83%;
+    margin: 0 auto;
+}
+
+.radioLink {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+}
+
+.insertar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.margin-table {
+    margin-top: 25px;
+}
+
+#right {
+    margin-right: 20px;
+}
+
+.display-2{
+
+    height: 350px;
+}
+.botones{
+    background-color: #FFA500;
+}
+.logotipo-center img {
+
+    height: 300px;
+}
+
+
+.html,body{
+
+    height:100vh;
+}
+body {
+    
+    background-image: url("../img/Fondoiniciologo.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.bienvenido {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align:center;
+
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.form-signin {
+    max-width: 400px;
+    padding: 15px;
+}
+
+.m-auto {
+    margin: auto!important;
+}
+.w-100 {
+    width: 100%!important;
+}

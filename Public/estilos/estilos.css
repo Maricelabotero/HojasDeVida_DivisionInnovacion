@@ -1,0 +1,123 @@
+.logo-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logo-center img {
+    height: 110px;
+    border-style: groove;
+}
+
+#padding {
+    padding-bottom: 20px;
+}
+
+.color-section {
+    color: green;
+}
+
+.padding {
+    padding-bottom: 20px;
+}
+
+.padding-top {
+    padding-top: 30 px;
+}
+
+.propiedades {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.design {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.gap {
+    display: flex;
+    gap: 6px;
+}
+
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+@media screen and (max-width: 480px) {
+    .contenido {
+        grid-template-columns: 1fr;
+        color: red;
+    }
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+
+.contenedorEnlace {
+    padding: 20px;
+    width: 83%;
+    margin: 0 auto;
+}
+
+.radioLink {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+}
+
+.insertar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.margin-table {
+    margin-top: 25px;
+}
+
+#right {
+    margin-right: 20px;
+}
+
+.custom-input-file {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 15px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+  }
+  
+  .custom-input-file .input-file {
+   border: 10px solid ;
+   cursor: pointer;
+   margin: 0;
+   opacity: 0;
+   outline: 0 none;
+   padding: 0;
+   position: absolute;
+
+  }
+
+  #img {
+    height: 300px;
+
+    border-color: #377D71;
+    border-style: none none solid;
+    justify-content: center;
+}

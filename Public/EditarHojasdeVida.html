@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="estilos/estilos.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-center">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <img src="img/logo.jpg" />
+            </div>
+            <div class="col-md-4">
+                <h3>Hoja De Vida<br><b>División de Innovación</b></h3>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row">
+            <form class="container" name="form-insertar" id="form-insertar">
+
+                <div class="row border border border-success padding">
+                    <div class="col-md-12">
+                        <h4 class="color-section">Persona</h4>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <div class="col-md-12" id="id_Nombre_completo">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cedula" class="form-label">Cédula</label>
+                        <div class="col-md-12" id="id_cedula">
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="tipoPersonal" class="form-label">Tipo de Personal</label>
+                        <div class="col-md-12">
+                            <select class="form-select" id="id_Tipo_personalE" name="Tipo_personal">
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row"><br></div>
+                    <div class="row">
+                        <div class=" col-md-3">
+                            <label for="telefono" class="form-label">Teléfono:</label>
+                            <div class="col-md-12" id="id_Telefono">
+
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4">
+                            <label for="correo" class="form-label">Correo:</label>
+                            <div class="col-md-12" id="id_Correo">
+
+                            </div>
+                        </div>
+
+                        <div class=" col-md-5">
+                            <label for="correo" class="form-label">One Drive:</label>
+                            <div class="col-md-12" id="id_OneDrive">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row border border border-success padding">
+                    <div class="col-md-12">
+                        <h4 class="color-section">Formación</h4>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="unidadFormacionInput" class="form-label">Unidad de Formación</label>
+                        <select class="form-select" id="id_Unidad_formacion" name="Unidad_Formacion">
+                            <option value="" disabled selected>Selecciona una unidad de formación</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nivelFormacion" class="form-label">Nivel de Formación</label>
+                        <select class="form-select" id="id_Nivel_formacion" name="Nivel_Formacion">
+                            <option value="" disabled selected>Selecciona un nivel de formación</option>
+                        </select>
+                    </div>
+                    <div class="row"><br></div>
+                    <div class="col-md-5">
+                        <label for="areaFormacionInput" class="form-label">Área de Formación (NBC)</label>
+                        <select class="form-select" id="id_Area_formacion" name="Area_formacion">
+                            <option value="" disabled selected>Selecciona una Area de formación</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cual" class="form-label">¿Cuál?</label>
+                        <input type="text" class="form-control" id="Cual" name="Cual" />
+                    </div>
+                    <div class="col-md-4 propiedades">
+                        <button type="button" class="btn btn-secondary" id="btn-agregar-formacion"
+                            formaction="javascript:TraerDatos();"
+                            onclick="TraerDatosFormacionActualizar()">Agregar</button>
+                    </div>
+                    <div class="col-md-12 ">
+                        <table class="table margin-table" id="tabla-formacion">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col"> Cédula </th>
+                                    <th> Unidad Formación </th>
+                                    <th> Area Formación </th>
+                                    <th> Nivel </th>
+                                    <th> Eliminar </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row border border-success padding-top padding">
+                    <div class="col-md-12">
+                        <h4 class="color-section">Experiencia</h4>
+                    </div>
+                    <div class="col-md-4 design">
+                        <div class="col-md-12">
+                            <label for="funciones" class="form-label">Funciones de la experiencia: </label>
+                            <input type="text" class="form-control" id="id_Funciones" name="Funciones" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 design">
+                        <div class="col-md-12">
+                            <label for="entidadExperiencia" class="form-label">Entidad de la experiencia: </label>
+                            <input type="text" class="form-control" id="id_Entidad_experiencia"
+                                name="Entidad_experiencia" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 design">
+                        <div class="col-md-12">
+                            <label for="mesesExperiencia" class="form-label">Meses de Experiencia: </label>
+                            <input type="number" class="form-control" id="id_Meses_experiencia"
+                                name="Meses_Experiencia">
+                            <i class="bi bi-trash"></i>
+                        </div>
+                    </div>
+                    <div class="row"><br></div>
+                    <div class="col-md-5 design">
+                        <div class="col-md-12">
+                            <label for="unidadFormacionInput" class="form-label">Área de experiencia: </label>
+                            <select class="form-select" id="id_Area_experiencia" name="Area_Experiencia">
+                                <option value="" disabled selected>Selecciona un área de experiencia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="Cual_experiencia" class="form-label">¿Cuál?</label>
+                        <input type="text" class="form-control" id="Cual_experiencia" name="Cual_experiencia" />
+                    </div>
+                <div class="col-md-4 propiedades">
+                        <br>
+                        <button type="button" class="btn btn-secondary" id="btnExperiencia"
+                            formaction="javascript:TraerDatos();" onclick="TraerDatosExperiencia()">Agregar</button>
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <table class="table margin-table" id="Tabla-Experiencia">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col"> Cédula </th>
+                                    <th> Funciones </th>
+                                    <th> Entidad </th>
+                                    <th> Meses</th>
+                                    <th> Área</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+        </div>
+    </div>
+
+    <div class="row margin ">
+
+        <div class="insertar col-md-12">
+            <button type="button" class="btn btn-secondary" style="width: 160px;" id="btn-actualizar-formulario"
+                onclick="MandarActualizar()">Actualizar</button>
+        </div>
+    </div>
+    <div class="row"><br></div>
+
+    </div>
+
+    </form>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="Script/ScriptConsulta.js"></script>
+    <script src="Script/ScriptEditar.js"></script>
+    <script src="Script/Script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+.logo-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logo-center img {
+    height: 110px;
+    border-style: groove;
+}
+
+#padding {
+    padding-bottom: 20px;
+}
+
+.color-section {
+    color: green;
+}
+
+.padding {
+    padding-bottom: 20px;
+}
+
+.padding-top {
+    padding-top: 30 px;
+}
+
+.propiedades {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.design {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.gap {
+    display: flex;
+    gap: 6px;
+}
+
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+@media screen and (max-width: 480px) {
+    .contenido {
+        grid-template-columns: 1fr;
+        color: red;
+    }
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+
+.contenedorEnlace {
+    padding: 20px;
+    width: 83%;
+    margin: 0 auto;
+}
+
+.radioLink {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+}
+
+.insertar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.margin-table {
+    margin-top: 25px;
+}
+
+#right {
+    margin-right: 20px;
+}
+
+
+.modalContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContainer .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgba(56, 240, 80, 0.836);
+    border-top: 10px solid #019267;
+    width: 60%;
+}
+
+.modalContainer .close {
+    color: #019267;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.modalContainer .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.u-section-1 {
+    min-height: 806px;
+}
+
+.u-section-1 .u-shape-1 {
+    height: 403px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: none;
+}
+
+#imagen {
+    height: 400px;
+    border-radius: 50%;
+    border-color: #1363DF;
+    border-style: none none solid;
+    background-position: 50% 50%;
+    margin: -50px auto 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+#fondoimagen {
+    background-color: antiquewhite;
+}
+
+#foto {
+    display: flex;
+}
+
+#parrafo {
+    font-family: 'Arima';
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    font-weight: bold;
+}
+#Formaciones {
+    font-family: 'Arima';
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    font-weight: bold;
+}
+
+#divparrafo {
+    background-color: #FFA500;
+}
+
+#logo img {
+    height: 180px;
+text-align: right;
+    margin: 0%
+
+}
+
+#logo1 img {
+    height: 50px;
+text-align: right;
+    margin: 2%;
+    margin-top: 8%;
+    margin-left: 8%;
+
+}
+
+.body{
+    background-image: url("../img/fondo1.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
+.icon-telephone {
+    color: #5CB85C;
+}
+
+.u-section-1 .u-text-1 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 4px;
+    font-size: 3rem;
+    width: 554px;
+    margin: 60px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+    width: 543px;
+    margin: 20px auto 0;
+}
+
+.u-section-1 .u-text-3 {
+    width: 527px;
+    margin: 30px auto 0;
+}
+
+.u-section-1 .u-btn-1 {
+    border-style: none none solid;
+    padding: 0;
+}
+
+.u-section-1 .u-btn-2 {
+    background-image: none;
+    border-style: none none solid;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 30px auto 60px;
+    padding: 0;
+}
+
+@media (max-width: 767px) {
+    .u-section-1 .u-text-1 {
+        width: 540px;
+    }
+
+    .u-section-1 .u-text-2 {
+        width: 540px;
+    }
+}
+
+@media (max-width: 575px) {
+    .u-section-1 {
+        min-height: 724px;
+    }
+
+    .u-section-1 .u-shape-1 {
+        height: 298px;
+    }
+
+    .u-section-1 .u-image-1 {
+        width: 340px;
+        height: 340px;
+        margin-top: -238px;
+    }
+
+    .u-section-1 .u-text-1 {
+        font-size: 1.5rem;
+        width: 340px;
+    }
+
+    .u-section-1 .u-text-2 {
+        width: 340px;
+    }
+
+    .u-section-1 .u-text-3 {
+        width: 340px;
+    }
+}
+
+div {
+    border-radius: 5px;
+}
+
+#encabezado {
+    z-index: 1;
+    position: fixed;
+    background-color: lightSkyBlue;
+    width: 97%;
+    height: 60px;
+    border: 2px dotted lightblue;
+    font-family: Times;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.izquierda {
+    float: left;
+    background-color: lightblue;
+    width: 20%;
+    height: 350px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    border: 2px groove white;
+}
+
+.derecha {
+    float: right;
+    background-color: rgb(240, 240, 240);
+    width: 78%;
+    height: 350px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    border: 2px groove white;
+}
+
+#pie {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    clear: both;
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    height: 60px;
+    border: 2px groove white;
+    font-family: Times;
+}
+
+#email {
+    float: right;
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+#email:hover {
+    font-weight: bold;
+    color: gray;
+}
+
+#name {
+    float: left;
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+    font-size: 1.5em;
+    margin: 22px 10px 10px 10px;
+}
+
+#name:hover {
+    color: white;
+}
+
+.content {
+    margin: 10px;
+}
+
+h4 {
+    color: lightSkyBlue;
+}
+
+#direccion {
+    text-align: center;
+    color: lightSkyBlue;
+}
+
+span:hover {
+    color: gray;
+    font-weight: bold;
+}
+
+ol {
+    list-style: none;
+    margin: 20px 0 0 -20px;
+    color: rgb(230, 230, 230);
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+a:active {
+    color: darkred;
+}
+
+#margen-top {
+    margin-top: 12px;
+}
