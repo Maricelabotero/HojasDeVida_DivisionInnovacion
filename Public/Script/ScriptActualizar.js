@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 //Mandar id de la persona a la nueva ventana
 function mandarId(elem) {
   const Elid = { _id: elem.id }
-  var w = window.open("https://hojas-de-vida.herokuapp.com/EditarHojasDeVida.html");
+  var w = window.open("https://hojas-de-vida.herokuapp.com/EditarHojasdeVida.html");
   w.myVariableActualizar = Elid;
 }
 
