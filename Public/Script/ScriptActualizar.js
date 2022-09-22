@@ -1,7 +1,7 @@
 //Mostrar tarjetas con las personas registradas en la base de datos
 document.addEventListener('DOMContentLoaded', async (req, res) => {
   async function MostrarA() {
-    const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
       mode: 'no-cors',
     })
       .then(res => res.json())
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 //Mandar id de la persona a la nueva ventana
 function mandarId(elem) {
   const Elid = { _id: elem.id }
-  var w = window.open("http://localhost:4000/EditarHojasDeVida.html");
+  var w = window.open("https://hojas-de-vida.herokuapp.com/EditarHojasDeVida.html");
   w.myVariableActualizar = Elid;
 }
 
@@ -70,7 +70,7 @@ async function Busqueda() {
   } else {
 
     var dataPerson = { Cedula: cedula };
-    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaCedula', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaCedula', {
       method: 'POST', body: JSON.stringify(dataPerson),
       headers: {
         'Content-Type': 'application/json'
