@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async (req, res) => {
     async function MostrarHoja() {
         const idPerson = { _id: myVariable._id }
-        const url = 'http://localhost:4000/HojaDeVida/ConsultarId'
+        const url = 'https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultarId'
         const data = await fetch(url, {
             method: 'POST', body: JSON.stringify(idPerson),
             headers: {
