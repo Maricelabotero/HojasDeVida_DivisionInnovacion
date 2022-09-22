@@ -1,5 +1,5 @@
 async function ConsultaExcel() {
-  const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
+  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
     mode: 'no-cors',
   })
     .then(res => res.json())
