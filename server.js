@@ -19,6 +19,6 @@ res.sendFile(path.join(__dirname, "Public/InicioSesion.html"))
 })
 
 
-app.listen(host='0.0.0.0');
+app.listen(4000);
 console.log('La app está corriendo en http://localhost:4000');
 
