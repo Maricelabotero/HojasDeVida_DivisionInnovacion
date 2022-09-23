@@ -121,3 +121,5 @@
     border-style: none none solid;
     justify-content: center;
 }
+
+#botoncasita{ transform: translateX(150%); }
