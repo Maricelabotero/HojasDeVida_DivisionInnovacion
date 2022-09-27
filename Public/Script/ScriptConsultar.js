@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 });
 
 async function Mostrar() {
-  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
+  const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
     mode: 'no-cors',
   })
     .then(res => res.json())
@@ -55,7 +55,7 @@ async function Mostrar() {
 
 //Llenar lista desplegable de unidad de formacion
 document.addEventListener('DOMContentLoaded', async () => {
-  const dataU = await fetch('https://hojas-de-vida.herokuapp.com/UnidadFormacion/Consultar')
+  const dataU = await fetch('http://localhost:4000/UnidadFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in dataU) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Llenar lista desplegable de area de formaciòn
 document.addEventListener('DOMContentLoaded', async () => {
-  const dataU = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarAreas')
+  const dataU = await fetch('http://localhost:4000/AreaFormacion/ConsultarAreas')
     .then(res => res.json())
     .catch(err => err)
   for (var i in dataU) {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista Nivel formación 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/NivelFormacion/Consultar')
+  const data2 = await fetch('http://localhost:4000/NivelFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista área experiencia
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/AreaExperiencia/Consultar')
+  const data2 = await fetch('http://localhost:4000/AreaExperiencia/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 //Mandar id de la persona a la nueva ventana de hoja de vida
 function mandarId(elem) {
   const Elid = { _id: elem.id }
-  var w = window.open("https://hojas-de-vida.herokuapp.com/HojaDeVida.html");
+  var w = window.open("http://localhost:4000/HojaDeVida.html");
   w.myVariable = Elid;
 }
 
@@ -167,7 +167,7 @@ async function TraerDatosBusqueda() {
     }
 
     //Enviar datos de consulta
-    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaBusqueda', {
+    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaBusqueda', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -203,19 +203,20 @@ async function TraerDatosBusqueda() {
 
         }
 
+
+        //Tarjetas de personaas
         document.getElementById(
           'Tarjetas-Personas'
         ).innerHTML += `<div class="col" ><div class="card"><div class="card-body border border border-success ">
-      <div class="card-header bg-success text-white fs-4 fst-italic">${data[i].Nombre_completo}</div>
-      <p class="card-text border"><p><h5>Descripción:</h5> ${Formaciones1} </br> ${Experiencias1}</p></p>
-      <p class="card-text border border-success"><p><h5>Datos de contacto:</h5>${data[i].Telefono} , ${data[i].Correo} </p></p>
-      <p class="card-text border border-success"><p><h5>Link OneDrive:</h5>${data[i].OneDrive}</p></p><p class="card-text border border-success"></p>  
-      <button class="btn btn-outline-success boton" id="${data[i]._id}" onclick="mandarId(this)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-      <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-    </svg>
-    </button>`
+    <div class="card-header bg-success text-white fs-4 fst-italic" id="Nombretarjeta">${data[i].Nombre_completo}</div>
+    <p class="card-text border"><p><h5>Descripción:</h5> ${Formaciones1} </br> ${Experiencias1}</p></p>
+    <p class="card-text border border-success"><p><h5>Datos de contacto:</h5>${data[i].Telefono} , ${data[i].Correo} </p></p>
+    <p class="card-text border border-success"><p><h5>Link OneDrive:</h5>${data[i].OneDrive}</p></p><p class="card-text border border-success"></p>
+    <button class="btn btn-outline-primary boton" id="${data[i]._id}" onclick="mandarId(this)" formaction="/"
+   ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+    </svg></button>        </div></div>`
 
       }
     }
@@ -284,7 +285,7 @@ async function TraerDatosBusquedaExpeyForma() {
 
     console.log(arregloBusqueda)
     //Enviar datos de consulta
-    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaExperienciayFormacion', {
+    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaExperienciayFormacion', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -418,13 +419,13 @@ async function TraerDatosBusquedaExpeyForma() {
                         formacion = formaciones[j]
                         for (var a in formacion) {
                           Formaciones1.push(`</br>` + ` ${formacion[a].Nivel_formacion} en  ${formacion[a].Unidad_formacion} en el área de ${formacion[a].Area_formacion} `)
-          
+
                         }
                       }
 
                       for (var j in Experiencias) {
                         Experiencias1.push(`</br>` + ` Experiencia en el área de ${Experiencias[j].Area_experiencia} como ${Experiencias[j].Funciones} en la entidad ${Experiencias[j].Entidad} por un periodo de ${Experiencias[j].Meses_Experiencia} meses`)
-    
+
                       }
                     } else {
                       //1 formación
@@ -432,7 +433,7 @@ async function TraerDatosBusquedaExpeyForma() {
                         console.log("8")
                         for (var a in formaciones) {
                           Formaciones1.push(`</br>` + ` ${formaciones[a].Nivel_formacion} en  ${formaciones[a].Unidad_formacion} en el área de ${formaciones[a].Area_formacion} `)
-    
+
                         }
 
                         for (var j in Experiencias) {
@@ -440,7 +441,7 @@ async function TraerDatosBusquedaExpeyForma() {
                           Experiencias1 = []
                           for (var a in experiencia) {
                             Experiencias1.push(`</br>` + ` Experiencia en el área de ${experiencia[a].Area_experiencia} como ${experiencia[a].Funciones} en la entidad ${experiencia[a].Entidad} por un periodo de ${experiencia[a].Meses_Experiencia} meses`)
-              
+
                           }
                         }
                       }
@@ -488,7 +489,7 @@ async function ConsultaExcel() {
       <th>Experiencias</th>
   </tr>`
 
-  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
+  const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
     mode: 'no-cors',
   })
     .then(res => res.json())
@@ -609,10 +610,124 @@ async function ConsultaExcelConsulta() {
   const selectN = document.getElementById("idNivelFormacion");
   var NivelFormacion = selectN.options[selectN.selectedIndex].text
 
+  const Nombre = document.getElementById("idNombreCompleto").value;
+  const Cedula = document.getElementById("idCedula").value;
+
+
   const arregloBusqueda = [];
   console.log(AreaExperiencia, MesesExperiencia, Formacion, AreaFormacion, NivelFormacion)
-  if (AreaExperiencia == "Selecciona un área de experiencia" & MesesExperiencia == "" & Formacion == "Selecciona una unidad de formación" & AreaFormacion == "Selecciona un area de formación" & NivelFormacion == "Selecciona un nivel de formación") {
+  if (AreaExperiencia == "Selecciona un área de experiencia" & MesesExperiencia == "" & Formacion == "Selecciona una unidad de formación" & AreaFormacion == "Selecciona un area de formación" & NivelFormacion == "Selecciona un nivel de formación" & Nombre == "" & Cedula == "") {
     swal("Error", "Agregue una consulta", "error")
+  } else if (AreaExperiencia == "Selecciona un área de experiencia" & MesesExperiencia == "" & Formacion == "Selecciona una unidad de formación" & AreaFormacion == "Selecciona un area de formación" & NivelFormacion == "Selecciona un nivel de formación") {
+    nombre = `${Nombre}`
+    cedula = `${Cedula}`
+
+    if (Nombre != "") {
+      NOMBRE = { Nombre: nombre }
+      arregloBusqueda.push(NOMBRE);
+    }
+    if (Cedula != "") {
+      CEDULA = { Cedula: cedula }
+      arregloBusqueda.push(CEDULA);
+    }
+
+    //Enviar datos de consulta
+    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaBusqueda', {
+      method: 'POST', body: JSON.stringify(arregloBusqueda),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .catch(err => err)
+
+    //Si recibe vacío, muestra la alerta, si no muestra el resultado de la consulta en las tarjetas
+    if (data == "") {
+      swal("Error", "No se encontró el registro", "error")
+    } else {
+      document.getElementById("Tarjetas-Personas").innerHTML = "";
+      for (var i in data) {
+        Formaciones = data[i].Formaciones
+        for (var j in Formaciones) {
+          formacion = Formaciones[j]
+          Formaciones1 = []
+          for (var a in formacion) {
+            Formaciones1.push(`</br>` + ` ${formacion[a].Nivel_formacion} en  ${formacion[a].Unidad_formacion} en el área de ${formacion[a].Area_formacion} `)
+
+          }
+        }
+
+
+        Experiencias = data[i].Experiencias
+        for (var j in Experiencias) {
+          experiencia = Experiencias[j]
+          Experiencias1 = []
+          for (var a in experiencia) {
+            Experiencias1.push(`</br>` + ` Experiencia en el área de ${experiencia[a].Area_experiencia} como ${experiencia[a].Funciones} en la entidad ${experiencia[a].Entidad} por un periodo de ${experiencia[a].Meses_Experiencia} meses`)
+
+          }
+
+        }
+
+
+        //Tarjetas de personaas
+        document.getElementById(
+          'TablaExcelConsulta'
+        ).innerHTML += `
+      <tr>
+      <th>${data[i].Nombre_completo}</th>
+      <th>${data[i].Cedula}</th>
+      <th>${data[i].Telefono}</th>
+      <th>${data[i].Correo}</th>
+      <th>${data[i].Tipo_personal}</th>
+      <th>${data[i].OneDrive}</th>
+      <th>${Formaciones1} </th>
+      <th>${Experiencias1}</th>
+      </tr>`
+
+      }
+
+      //Función para descargar excel con las hojas de vida consultadas
+      function exportTableToExcel(tableID, filename = '') {
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel; charset=UTF-8';
+        var tableSelect = document.getElementById('TablaExcelConsulta');
+        var tableHTML = tableSelect.outerHTML
+        var Escape = escape(tableHTML)
+        // Specify file name
+        filename = filename ? filename + '.xlsx' : 'Consulta Hojas de vida.xls';
+
+        // Create download link element
+        downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if (navigator.msSaveOrOpenBlob) {
+          //<meta charset="UTF-8"></meta>
+          var blob = new Blob(['\UTF-8', Escape], {
+            type: dataType
+          });
+          navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+          // Create a link to the file
+          downloadLink.href = 'data:' + dataType + ', ' + Escape;
+
+          // Setting the file name
+          downloadLink.download = filename;
+
+          //triggering the function
+          downloadLink.click();
+        }
+      }
+      exportTableToExcel()
+      //Recarga la página para no mostrar la tabla
+      function redireccionarPagina() {
+        window.location = "/ConsultarHojasdeVida.html";
+      }
+      setTimeout(redireccionarPagina, 0000);
+
+    }
+
+
   } else {
     experiencia = `${AreaExperiencia}`
     mesesexperiencia = `${MesesExperiencia}`
@@ -658,7 +773,7 @@ async function ConsultaExcelConsulta() {
     console.log("arreglo", arregloBusqueda);
 
     //Enviar datos de consulta
-    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaExperienciayFormacion', {
+    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaExperienciayFormacion', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -688,7 +803,7 @@ async function ConsultaExcelConsulta() {
         Formaciones1 = []
         Experiencias1 = []
 
-       //Hace validaciones de acuerdo a las posibles consultas
+        //Hace validaciones de acuerdo a las posibles consultas
         //Consulta formaciones
         if (formaciones.length == undefined & Experiencias.length != undefined & conteoExperiencia == 0 & conteoFormacion >= 2) {
           console.log("1")
@@ -792,13 +907,13 @@ async function ConsultaExcelConsulta() {
                         formacion = formaciones[j]
                         for (var a in formacion) {
                           Formaciones1.push(`</br>` + ` ${formacion[a].Nivel_formacion} en  ${formacion[a].Unidad_formacion} en el área de ${formacion[a].Area_formacion} `)
-          
+
                         }
                       }
 
                       for (var j in Experiencias) {
                         Experiencias1.push(`</br>` + ` Experiencia en el área de ${Experiencias[j].Area_experiencia} como ${Experiencias[j].Funciones} en la entidad ${Experiencias[j].Entidad} por un periodo de ${Experiencias[j].Meses_Experiencia} meses`)
-    
+
                       }
                     } else {
                       //1 formación
@@ -806,7 +921,7 @@ async function ConsultaExcelConsulta() {
                         console.log("8")
                         for (var a in formaciones) {
                           Formaciones1.push(`</br>` + ` ${formaciones[a].Nivel_formacion} en  ${formaciones[a].Unidad_formacion} en el área de ${formaciones[a].Area_formacion} `)
-    
+
                         }
 
                         for (var j in Experiencias) {
@@ -814,7 +929,7 @@ async function ConsultaExcelConsulta() {
                           Experiencias1 = []
                           for (var a in experiencia) {
                             Experiencias1.push(`</br>` + ` Experiencia en el área de ${experiencia[a].Area_experiencia} como ${experiencia[a].Funciones} en la entidad ${experiencia[a].Entidad} por un periodo de ${experiencia[a].Meses_Experiencia} meses`)
-              
+
                           }
                         }
                       }
@@ -827,7 +942,7 @@ async function ConsultaExcelConsulta() {
         }
 
 
-        //Tarjetas de personaas
+        //Tarjetas de personas
         document.getElementById(
           'TablaExcelConsulta'
         ).innerHTML += `
