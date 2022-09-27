@@ -582,19 +582,6 @@ async function ConsultaExcel() {
 
 //Acción botón descargar excel con las hojas de vida que cumplen con los requisitos y crea una tabla con los registros
 async function ConsultaExcelConsulta() {
-  document.getElementById(
-    'TablaExcelConsulta'
-  ).innerHTML += `            <tr>
-  <tr>
-      <th>Nombre completo</th>
-      <th>Cedula</th>
-      <th>Telefono</th>
-      <th>Correo</th>
-      <th>Tipo de personal</th>
-      <th>One Drive</th>
-      <th>Formaciones</th>
-      <th>Experiencias</th>
-  </tr>`
 
   var conteo = 0
   var conteoExperiencia = 0
@@ -619,6 +606,21 @@ async function ConsultaExcelConsulta() {
   if (AreaExperiencia == "Selecciona un área de experiencia" & MesesExperiencia == "" & Formacion == "Selecciona una unidad de formación" & AreaFormacion == "Selecciona un area de formación" & NivelFormacion == "Selecciona un nivel de formación" & Nombre == "" & Cedula == "") {
     swal("Error", "Agregue una consulta", "error")
   } else if (AreaExperiencia == "Selecciona un área de experiencia" & MesesExperiencia == "" & Formacion == "Selecciona una unidad de formación" & AreaFormacion == "Selecciona un area de formación" & NivelFormacion == "Selecciona un nivel de formación") {
+    
+    document.getElementById(
+      'TablaExcelConsulta'
+    ).innerHTML += `            <tr>
+    <tr>
+        <th>Nombre completo</th>
+        <th>Cedula</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Tipo de personal</th>
+        <th>One Drive</th>
+        <th>Formaciones</th>
+        <th>Experiencias</th>
+    </tr>`
+
     nombre = `${Nombre}`
     cedula = `${Cedula}`
 
@@ -729,6 +731,21 @@ async function ConsultaExcelConsulta() {
 
 
   } else {
+    
+    document.getElementById(
+      'TablaExcelConsulta'
+    ).innerHTML += `            <tr>
+    <tr>
+        <th>Nombre completo</th>
+        <th>Cedula</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Tipo de personal</th>
+        <th>One Drive</th>
+        <th>Formaciones</th>
+        <th>Experiencias</th>
+    </tr>`
+
     experiencia = `${AreaExperiencia}`
     mesesexperiencia = `${MesesExperiencia}`
     formacion = `${Formacion}`
