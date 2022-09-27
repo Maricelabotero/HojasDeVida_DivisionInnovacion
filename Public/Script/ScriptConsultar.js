@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 });
 
 async function Mostrar() {
-  const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
+  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
     mode: 'no-cors',
   })
     .then(res => res.json())
@@ -55,7 +55,7 @@ async function Mostrar() {
 
 //Llenar lista desplegable de unidad de formacion
 document.addEventListener('DOMContentLoaded', async () => {
-  const dataU = await fetch('http://localhost:4000/UnidadFormacion/Consultar')
+  const dataU = await fetch('https://hojas-de-vida.herokuapp.com/UnidadFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in dataU) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Llenar lista desplegable de area de formaciòn
 document.addEventListener('DOMContentLoaded', async () => {
-  const dataU = await fetch('http://localhost:4000/AreaFormacion/ConsultarAreas')
+  const dataU = await fetch('https://hojas-de-vida.herokuapp.com/AreaFormacion/ConsultarAreas')
     .then(res => res.json())
     .catch(err => err)
   for (var i in dataU) {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista Nivel formación 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('http://localhost:4000/NivelFormacion/Consultar')
+  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/NivelFormacion/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Petición para llenar lista área experiencia
 document.addEventListener('DOMContentLoaded', async () => {
-  const data2 = await fetch('http://localhost:4000/AreaExperiencia/Consultar')
+  const data2 = await fetch('https://hojas-de-vida.herokuapp.com/AreaExperiencia/Consultar')
     .then(res => res.json())
     .catch(err => err)
   for (var i in data2) {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 //Mandar id de la persona a la nueva ventana de hoja de vida
 function mandarId(elem) {
   const Elid = { _id: elem.id }
-  var w = window.open("http://localhost:4000/HojaDeVida.html");
+  var w = window.open("https://hojas-de-vida.herokuapp.com/HojaDeVida.html");
   w.myVariable = Elid;
 }
 
@@ -167,7 +167,7 @@ async function TraerDatosBusqueda() {
     }
 
     //Enviar datos de consulta
-    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaBusqueda', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaBusqueda', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -285,7 +285,7 @@ async function TraerDatosBusquedaExpeyForma() {
 
     console.log(arregloBusqueda)
     //Enviar datos de consulta
-    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaExperienciayFormacion', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaExperienciayFormacion', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -489,7 +489,7 @@ async function ConsultaExcel() {
       <th>Experiencias</th>
   </tr>`
 
-  const data = await fetch('http://localhost:4000/HojaDeVida/Consultar', {
+  const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/Consultar', {
     mode: 'no-cors',
   })
     .then(res => res.json())
@@ -634,7 +634,7 @@ async function ConsultaExcelConsulta() {
     }
 
     //Enviar datos de consulta
-    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaBusqueda', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaBusqueda', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
@@ -790,7 +790,7 @@ async function ConsultaExcelConsulta() {
     console.log("arreglo", arregloBusqueda);
 
     //Enviar datos de consulta
-    const data = await fetch('http://localhost:4000/HojaDeVida/ConsultaExperienciayFormacion', {
+    const data = await fetch('https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultaExperienciayFormacion', {
       method: 'POST', body: JSON.stringify(arregloBusqueda),
       headers: {
         'Content-Type': 'application/json'
