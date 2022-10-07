@@ -51,7 +51,7 @@ async function verificarUsuario() {
     }
     else {
         var Usuario = { Usuario: usuario, Clave: clave };
-        const data = await fetch('http://localhost:4000/Usuario/Consultar', {
+        const data = await fetch('https://hojas-de-vida.herokuapp.com/Usuario/Consultar', {
             method: 'POST', body: JSON.stringify(Usuario),
             headers: {
                 'Content-Type': 'application/json'
