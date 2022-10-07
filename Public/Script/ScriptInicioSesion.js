@@ -45,12 +45,13 @@ function SwalDeleteActualizarFormacion(id) {
 async function verificarUsuario() {
     const usuario = document.getElementById("Usuario").value;
     const clave = document.getElementById("Clave").value;
+    var tipousuario;
     if (usuario == "" || clave == "") {
         swal("Error", "Por favor llena todos los campos", "error")
     }
     else {
         var Usuario = { Usuario: usuario, Clave: clave };
-        const data = await fetch('https://hojas-de-vida.herokuapp.com/Usuario/Consultar', {
+        const data = await fetch('http://localhost:4000/Usuario/Consultar', {
             method: 'POST', body: JSON.stringify(Usuario),
             headers: {
                 'Content-Type': 'application/json'
@@ -65,15 +66,25 @@ async function verificarUsuario() {
                 if (data[i].Tipo_Usuario == "Natural") {
                     function redireccionarPaginaNatural() {
                         window.location = "/Inicio.html";
+                        tipousuario = "Natural";
                     }
                     redireccionarPaginaNatural()
                 }
-                else {
+                else if(data[i].Tipo_Usuario == "Administrador"){
                     function redireccionarPaginaAdministrador() {
                         window.location = "/InicioAdministrador.html";
+                        tipousuario = "Administrador";
+                        
                     }
                     redireccionarPaginaAdministrador()
 
+                }else{
+                    function redireccionarPaginaInvitado() {
+                        window.location = "/InicioInvitado.html";
+                        tipousuario = "Invitado";
+                        
+                    }
+                    redireccionarPaginaInvitado()
                 }
             }
         }
