@@ -17,6 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200&display=swap" rel="stylesheet">
 
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/default-logo.png"
+}</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Casa">
     <meta property="og:type" content="website">
@@ -28,44 +35,53 @@
         <div class="col-4" id="logo1">
             <img src="img/SomosInnovacion.png" class="rounded float-start" />
         </div>
-        <div class="col-4"  id="logo">
+        <div class="col-4" id="logo">
             <img src="img/logotipo.png" class="rounded float-end" />
         </div>
-      </div>
+    </div>
 
-
+    <div class="col-md-12 " id="BotonPDF">
+        <div class="col-auto me-auto">
+            <button type="button" class="btn btn-secondary" id="btnCrearPDF">Descargar PDF</button>
+        </div>
+    </div>
 
 
     <section class=" u-align-center u-clearfix u-section-1" id="carousel_f880">
 
-        <div class="col-md-6 offset-md-3" id="foto"  >
+        <div class="col-md-6 offset-md-3" id="foto">
         </div>
         <div class="col-md-6 offset-md-3" id="divparrafo">
- 
-        </div>
-        <br/>
-	    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-2" id="Telefono">
-
-            </div>
-            <div class="col-2" id="Correo">
-
-            </div>
-          </div>
-          <div class="col-md-2 offset-md-5" id="Onedrive">
 
         </div>
-       </div>
+        <br />
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-2" id="Telefono">
+
+                </div>
+                <div class="col-2" id="Correo">
+
+                </div>
+            </div>
+            <div class="col-md-2 offset-md-5" id="Onedrive">
+
+            </div>
+        </div>
+
         <span class="placeholder col-12 bg-success"></span>
 
-        <br/>
-        <div class="col-md-6 offset-md-3" >
-        <p class="u-text u-text-2" id="Info"></p>
-    </div>
+        <br />
+        <div class="col-md-6 offset-md-3">
+            <p class="u-text u-text-2" id="Info"></p>
+        </div>
     </section>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="Script/ScriptHojaDeVida.js"></script>
 </body>
 
