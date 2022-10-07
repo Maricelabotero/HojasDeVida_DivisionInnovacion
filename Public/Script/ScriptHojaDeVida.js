@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async (req, res) => {
     async function MostrarHoja() {
         const idPerson = { _id: myVariable._id }
-        const url = 'https://hojas-de-vida.herokuapp.com/HojaDeVida/ConsultarId'
+        const url = 'http://localhost:4000/HojaDeVida/ConsultarId'
         const data = await fetch(url, {
             method: 'POST', body: JSON.stringify(idPerson),
             headers: {
@@ -79,4 +79,33 @@ document.addEventListener('DOMContentLoaded', async (req, res) => {
 
     MostrarHoja()
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Escuchamos el click del botón
+    const $boton = document.querySelector("#btnCrearPDF");
+    $boton.addEventListener("click", () => {
+        const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
+        html2pdf()
+            .set({
+                margin: 1,
+                filename: 'Hoja de vida.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 3, // A mayor escala, mejores gráficos, pero más peso
+                    letterRendering: true,
+                },
+                jsPDF: {
+                    unit: "in",
+                    format: "a3",
+                    orientation: 'portrait' // landscape o portrait
+                }
+            })
+            .from($elementoParaConvertir)
+            .save()
+            .catch(err => console.log(err));
+    });
 });
